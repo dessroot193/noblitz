@@ -1,5 +1,5 @@
 {
-  "manifestt_version": 3,
+  "manifest_version": 3,
   "name": "NoBlitz",
   "version": "0.1",
   "description": "Firefox extension for Chess.com and Lichess to make you focus on playing longer time controls",
