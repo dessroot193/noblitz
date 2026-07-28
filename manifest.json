@@ -19,10 +19,35 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.chess.com/*"
+        "*://*.chess.com/*",
+        "*://*.lichess.org/*"
       ],
       "js": [
-        "chesscom.js"
+        "utils.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.chess.com/home"
+      ],
+      "js": [
+        "chesscom/home.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.chess.com/play/online"
+      ],
+      "js": [
+        "chesscom/playonline.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://*.chess.com/member/*"
+      ],
+      "js": [
+        "chesscom/profile.js"
       ]
     },
     {

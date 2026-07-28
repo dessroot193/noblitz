@@ -1,5 +1,4 @@
 const mainPageButtons = document.querySelectorAll(".lpool");
-const targets = ["1+0", "2+1", "3+0", "3+2", "5+0", "5+3", "bullet", "blitz"];
 if (mainPageButtons) {
   for (const button of mainPageButtons) {
     if (targets.includes(button.getAttribute("data-id"))) {
