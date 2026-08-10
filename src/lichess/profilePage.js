@@ -1,12 +1,4 @@
-const mainPageButtons = document.querySelectorAll(".lpool");
-if (mainPageButtons) {
-  for (const button of mainPageButtons) {
-    if (targets.includes(button.getAttribute("data-id"))) {
-      button.remove();
-    }
-  }
-}
-
+import { targets } from '../utils.js'
 const profileRatings = document
   .querySelector(".side.sub-ratings")
   .querySelectorAll(":scope > a");

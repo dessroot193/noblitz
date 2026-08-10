@@ -1,4 +1,4 @@
-const targets = [
+export const targets = [
   "1+0",
   "2+1",
   "3+0",
@@ -9,4 +9,4 @@ const targets = [
   "bullet",
   "blitz",
 ];
-const timeControl = ["900", "10"];
+export const timeControls = [["900", "10"],["600", "5"],["600", "0"]];

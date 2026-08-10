@@ -1,3 +1,4 @@
+import { targets } from '../utils.js'
 function profilePage() {
   const profilePageStats = document.querySelectorAll(
     ".overview-stats-item-component",

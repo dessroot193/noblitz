@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "name": "test",
+  "description": "Adds a sidebar panel to the browser with a simple page.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "extension dev",
+    "start": "extension start",
+    "build": "extension build",
+    "preview": "extension preview",
+    "build:chrome": "extension build --browser chrome",
+    "build:firefox": "extension build --browser firefox",
+    "build:edge": "extension build --browser edge"
+  },
+  "devDependencies": {
+    "extension": "^4.0.28"
+  },
+  "packageManager": "npm@12.0.1",
+  "author": {
+    "name": "Denise Osipova",
+    "email": "dessroot193@gmail.com"
+  },
+  "allowScripts": {
+    "@swc/core@1.15.47": true
+  }
+}

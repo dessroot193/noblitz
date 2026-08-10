@@ -1,3 +1,4 @@
+import { targets } from '../utils.js'
 function playOnlinePage() {
   const playOnlineSelector = document.getElementsByClassName(
     "time-selector-section-component",
