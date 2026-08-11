@@ -34,43 +34,21 @@
   "content_scripts": [
     {
       "matches": [
-        "*://*.chess.com/home"
+        "*://*.chess.com/*"
       ],
       "js": [
-        "chesscom/homePage.js"
+        "chesscom.js",
+        "config.js",
+        "utils.js"
       ]
     },
     {
       "matches": [
-        "*://*.chess.com/play/online"
-      ],
-      "js": [
-        "chesscom/playOnline.js"
-      ]
-    },
-    {
-      "matches": [
-        "*://*.chess.com/member/*"
-      ],
-      "js": [
-        "chesscom/profilePage.js"
-      ]
-    },
-    {
-      "matches": [
-        "*://*.lichess.org/"
+        "*://*.lichess.org/*"
       ],
       "js": [
         "config.js",
-        "lichess/mainPage.js"
-      ]
-    },
-    {
-      "matches": [
-        "*://*.lichess.org/@/*"
-      ],
-      "js": [
-        "lichess/profilePage.js"
+        "lichess.js"
       ]
     }
   ]
