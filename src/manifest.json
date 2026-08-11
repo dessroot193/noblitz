@@ -37,7 +37,7 @@
         "*://*.chess.com/home"
       ],
       "js": [
-        "chesscom/home.js"
+        "chesscom/homePage.js"
       ]
     },
     {
@@ -45,7 +45,7 @@
         "*://*.chess.com/play/online"
       ],
       "js": [
-        "chesscom/playonline.js"
+        "chesscom/playOnline.js"
       ]
     },
     {
@@ -53,7 +53,7 @@
         "*://*.chess.com/member/*"
       ],
       "js": [
-        "chesscom/profile.js"
+        "chesscom/profilePage.js"
       ]
     },
     {
@@ -61,7 +61,7 @@
         "*://*.lichess.org/"
       ],
       "js": [
-        "utils.js",
+        "config.js",
         "lichess/mainPage.js"
       ]
     },

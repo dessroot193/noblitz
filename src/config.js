@@ -1,3 +1,6 @@
+export const chesscomUser = "dess193";
+export const lossLimit = 3;
+export const lossCoolDown = 86400;
 export const targets = [
   "1+0",
   "2+1",
@@ -8,5 +11,7 @@ export const targets = [
   "ultrabullet",
   "bullet",
   "blitz",
+  "Bullet",
+  "Blitz"
 ];
 export const timeControls = [["900", "10"],["600", "5"],["600", "0"]];

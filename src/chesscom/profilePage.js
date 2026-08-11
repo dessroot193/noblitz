@@ -1,4 +1,4 @@
-import { targets } from '../utils.js'
+import * as config from '../config.js'
 function profilePage() {
   const profilePageStats = document.querySelectorAll(
     ".overview-stats-item-component",
@@ -6,7 +6,7 @@ function profilePage() {
   if (profilePageStats) {
     console.log("a");
     for (const stats of profilePageStats) {
-      if (targets.includes(stats.href.split("/").reverse()[0])) {
+      if (config.targets.includes(stats.href.split("/").reverse()[0])) {
         stats.remove();
       }
     }

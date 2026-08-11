@@ -1,11 +1,11 @@
-import { targets } from '../utils.js'
+import * as config from '../config.js'
 function playOnlinePage() {
   const playOnlineSelector = document.getElementsByClassName(
     "time-selector-section-component",
   );
   if (playOnlineSelector) {
     for (section of playOnlineSelector) {
-      if ("BulletBlitz".includes(section.children[0].children[1].textContent)) {
+      if (config.targets.includes(section.children[0].children[1].textContent)) {
         section.remove();
       }
     }
