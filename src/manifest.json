@@ -39,7 +39,8 @@
       "js": [
         "chesscom.js",
         "config.js",
-        "utils.js"
+        "utils.js",
+        "noblitz.css"
       ]
     },
     {
@@ -50,6 +51,12 @@
         "config.js",
         "lichess.js"
       ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/blocker.png"],
+      "matches": ["<all_urls>"]
     }
   ]
 }

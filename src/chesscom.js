@@ -1,6 +1,8 @@
 import * as config from './config.js'
 import * as utils from './utils.js'
 
+utils.losesCheck();
+
 function homePage() {
   const homePageButtons = document.querySelectorAll(
     ".cc-button-component.cc-button-secondary.cc-button-medium.cc-bg-secondary.time-selector-button-button",
@@ -19,9 +21,53 @@ function homePage() {
     })
   }
   }
-utils.losesCheck();
+function closeBoard(){
+  const block = document.createElement("img");
+  block.src = browser.runtime.getURL("images/blocker.png");
+  block.className = "noblitz-chesscom-blocker";
+  const board = document.querySelector("#board-layout-chessboard");
+  board.append(block);
+}
+function openBoard(){
+  document.querySelector(".noblitz-chesscom-blocker").remove()
+}
+function tickObserver(targetClock,player,clocks,blocked){
+  const tickObserver = new MutationObserver((tick) => {
+    if(!blocked.is){
+    if(targetClock != player){
+      closeBoard();
+      blocked.is = true;
+    }}
+    else {
+      if(targetClock == player){
+        openBoard();
+        blocked.is = false;
+      }
+    }
+   })
+    tickObserver.observe(clocks[targetClock], {
+    childList: true,
+    subtree: true,
+    attributes: true
+});
+}
+function blockOnOpponentMove(){
+  const playerTop = document.querySelector("#player-top");
+  const playerBottom = document.querySelector("#player-bottom");
+  if(playerTop && playerBottom){
+  const player = playerTop.querySelector(".cc-user-username-component").textContent == config.chesscomUser? "top" : "bottom";
+  const clocks = {
+  "top": playerTop.querySelector(".move-time-time"),
+  "bottom": playerBottom.querySelector(".move-time-time")
+  }
+  let blocked = {is: false};
+  tickObserver("top", player,clocks,blocked);
+  tickObserver("bottom", player,clocks,blocked);
+  }
+}
+
 const observer = new MutationObserver((mutations) => {
-  //homePage();
+  blockOnOpponentMove();
   const recentSelector = document.querySelector(".recent-time-section-component");
   if(recentSelector){
     recentSelector.remove();
@@ -35,9 +81,7 @@ const observer = new MutationObserver((mutations) => {
   utils.removeByChildTextContent(".tournament-event-component.tournaments-calendar-event",".tournament-event-name");
 });
 
-const targetNode = document.body;
-
-observer.observe(targetNode, {
+observer.observe(document.body, {
   childList: true,
   subtree: true,
 });
